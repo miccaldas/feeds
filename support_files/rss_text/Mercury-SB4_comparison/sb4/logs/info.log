@@ -1,0 +1,38 @@
+2022-01-24T21:29:14.793195+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (202393), thread 'MainThread' (139666793895744):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/rss_feeds/scraping.py", line 32, in <module>
+    hn_rss()
+    └ <function hn_rss at 0x7f06b34f4160>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function hn_rss at 0x7f06b5461c60>
+
+TypeError: hn_rss() missing 1 required positional argument: 'hn_url'
+2022-01-24T21:45:03.915943+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (203089), thread 'MainThread' (140595190081344):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/rss_feeds/scraping.py", line 29, in <module>
+    hn_rss()
+    └ <function hn_rss at 0x7fdedc094160>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function hn_rss at 0x7fdeddff9c60>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/rss_feeds/scraping.py", line 23, in hn_rss
+    soup = BeautifulSoup(r.content, "xml_parser")
+           │             │ └ <property object at 0x7fdedd2fdda0>
+           │             └ <Response [429]>
+           └ <class 'bs4.BeautifulSoup'>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/bs4/__init__.py", line 245, in __init__
+    raise FeatureNotFound(
+          └ <class 'bs4.FeatureNotFound'>
+
+bs4.FeatureNotFound: Couldn't find a tree builder with the features you requested: xml_parser. Do you need to install a parser library?

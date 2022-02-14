@@ -1,0 +1,272 @@
+2022-01-23T19:11:36.876754+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (136741), thread 'MainThread' (140291175323456):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_file_creation.py", line 44, in <module>
+    scrape_file_creation()
+    └ <function scrape_file_creation at 0x7f9813bd68c0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function scrape_file_creation at 0x7f98154e5d80>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_file_creation.py", line 30, in scrape_file_creation
+    title_aspas = title_underscore('"', "")
+                  └ 'Analysts_Weigh_In:__Will_We_Ever_See_the_Year_of_the_Linux_Desktop?'
+
+TypeError: 'str' object is not callable
+2022-01-23T19:11:36.876754+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (136741), thread 'MainThread' (140291175323456):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_file_creation.py", line 44, in <module>
+    scrape_file_creation()
+    └ <function scrape_file_creation at 0x7f9813bd68c0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function scrape_file_creation at 0x7f98154e5d80>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_file_creation.py", line 30, in scrape_file_creation
+    title_aspas = title_underscore('"', "")
+                  └ 'Analysts_Weigh_In:__Will_We_Ever_See_the_Year_of_the_Linux_Desktop?'
+
+TypeError: 'str' object is not callable
+2022-01-23T20:51:38.292339+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (141044), thread 'MainThread' (140039516305216):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py", line 37, in <module>
+    scrape_trigger()
+    └ <function scrape_trigger at 0x7f5d7c82a710>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function scrape_trigger at 0x7f5d7d677d90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py", line 29, in scrape_trigger
+    print(f"short is - {short}")
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py", line 29, in scrape_trigger
+    print(f"short is - {short}")
+
+  File "/usr/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+           │    │             └ <frame at 0x7f5d7d0dba60, file '/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py', line 29, code...
+           │    └ <function Bdb.dispatch_line at 0x7f5d7d325360>
+           └ <pdb.Pdb object at 0x7f5d7c817eb0>
+  File "/usr/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+       │    │               └ <class 'bdb.BdbQuit'>
+       │    └ True
+       └ <pdb.Pdb object at 0x7f5d7c817eb0>
+
+bdb.BdbQuit
+2022-01-23T21:03:01.032464+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (141162), thread 'MainThread' (140282140407616):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py", line 37, in <module>
+    scrape_trigger()
+    └ <function scrape_trigger at 0x7f95fa08a710>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function scrape_trigger at 0x7f95faed7d90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py", line 33, in scrape_trigger
+    sleep(50)
+    └ <built-in function sleep>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py", line 33, in scrape_trigger
+    sleep(50)
+    └ <built-in function sleep>
+
+  File "/usr/lib/python3.10/bdb.py", line 90, in trace_dispatch
+    return self.dispatch_line(frame)
+           │    │             └ <frame at 0x7f95fa937a60, file '/usr/share/nginx/html/feeds/support_files/rss_text/slashdot/scrape_trigger.py', line 33, code...
+           │    └ <function Bdb.dispatch_line at 0x7f95fab85360>
+           └ <pdb.Pdb object at 0x7f95fa077eb0>
+  File "/usr/lib/python3.10/bdb.py", line 115, in dispatch_line
+    if self.quitting: raise BdbQuit
+       │    │               └ <class 'bdb.BdbQuit'>
+       │    └ True
+       └ <pdb.Pdb object at 0x7f95fa077eb0>
+
+bdb.BdbQuit
+2022-01-24T00:42:43.977381+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (150443), thread 'MainThread' (139810925094720):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 69, in <module>
+    pas.bs4_parser()
+    │   └ <function ParseAndScrape.bs4_parser at 0x7f2842313f40>
+    └ <__main__.ParseAndScrape object at 0x7f284230ac80>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f284230ac80>,)
+           └ <function ParseAndScrape.bs4_parser at 0x7f2842313d00>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 45, in bs4_parser
+    text = soup.findall("p")
+           └ <!DOCTYPE html>
+             
+             <html lang="en-US">
+             <head>
+             <meta charset="utf-8"/>
+             <link href="//secure.gravatar.com" rel="dns-prefetch"/>
+             <...
+
+TypeError: 'NoneType' object is not callable
+2022-01-24T00:42:44.584279+0000 - __main__ - ERROR - An error has been caught in function 'rough_html', process 'MainProcess' (150443), thread 'MainThread' (139810925094720):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 70, in <module>
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7f284233c3a0>
+    └ <__main__.ParseAndScrape object at 0x7f284230ac80>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f284230ac80>,)
+           └ <function ParseAndScrape.rough_html at 0x7f284233c280>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 56, in rough_html
+    page_fundamentals = self.bs4_parser()
+                        │    └ <function ParseAndScrape.bs4_parser at 0x7f2842313f40>
+                        └ <__main__.ParseAndScrape object at 0x7f284230ac80>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f284230ac80>,)
+           └ <function ParseAndScrape.bs4_parser at 0x7f2842313d00>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 45, in bs4_parser
+    text = soup.findall("p")
+           └ <!DOCTYPE html>
+             
+             <html lang="en-US">
+             <head>
+             <meta charset="utf-8"/>
+             <link href="//secure.gravatar.com" rel="dns-prefetch"/>
+             <...
+
+TypeError: 'NoneType' object is not callable
+2022-01-24T00:42:44.703229+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (150443), thread 'MainThread' (139810925094720):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 70, in <module>
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7f284233c3a0>
+    └ <__main__.ParseAndScrape object at 0x7f284230ac80>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f284230ac80>,)
+           └ <function ParseAndScrape.rough_html at 0x7f284233c280>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 58, in rough_html
+    fundamentals = list(page_fundamentals.items())
+                        └ None
+
+AttributeError: 'NoneType' object has no attribute 'items'
+2022-01-24T03:09:37.022583+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (156045), thread 'MainThread' (140166286722880):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 86, in <module>
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7f7aff6883a0>
+    └ <__main__.ParseAndScrape object at 0x7f7aff63b490>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f7aff63b490>,)
+           └ <function ParseAndScrape.rough_html at 0x7f7aff688280>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 61, in rough_html
+    with open(f"rough_html/{page_fundamentals['title']}.html", "w") as f:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'rough_html/github_-_asciibeats/elixir_ranch:_a.html'
+2022-01-24T03:11:49.820039+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (156345), thread 'MainThread' (139822058968896):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 86, in <module>
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7f2ad9d503a0>
+    └ <__main__.ParseAndScrape object at 0x7f2ad9d25bd0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f2ad9d25bd0>,)
+           └ <function ParseAndScrape.rough_html at 0x7f2ad9d50280>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 61, in rough_html
+    with open(f"rough_html/{page_fundamentals['title']}.html", "w") as f:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'rough_html/github_-_asciibeats/elixir_ranch:_a.html'
+2022-01-24T03:15:19.668915+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (156408), thread 'MainThread' (139863735592768):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 86, in <module>
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7f348df443a0>
+    └ <__main__.ParseAndScrape object at 0x7f348df12f80>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7f348df12f80>,)
+           └ <function ParseAndScrape.rough_html at 0x7f348df44280>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 61, in rough_html
+    with open(f"rough_html/{page_fundamentals['title']}.html", "w") as f:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'rough_html/github_-_asciibeats/elixir_ranch:_a.html'
+2022-01-24T03:20:14.625047+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (156548), thread 'MainThread' (140420393891648):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 86, in <module>
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7fb6296003a0>
+    └ <__main__.ParseAndScrape object at 0x7fb6295bf250>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7fb6295bf250>,)
+           └ <function ParseAndScrape.rough_html at 0x7fb629600280>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 61, in rough_html
+    with open(f"rough_html/{page_fundamentals['title']}.html", "w") as f:
+
+FileNotFoundError: [Errno 2] No such file or directory: 'rough_html/github_-_asciibeats/elixir_ranch:_a.html'
+2022-01-24T04:32:14.062378+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (159348), thread 'MainThread' (140595320395584):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 87, in <module>
+    pas.first_html_cleaning()
+    │   └ <function ParseAndScrape.first_html_cleaning at 0x7fdee3ce0820>
+    └ <__main__.ParseAndScrape object at 0x7fdee3c934f0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<__main__.ParseAndScrape object at 0x7fdee3c934f0>,)
+           └ <function ParseAndScrape.first_html_cleaning at 0x7fdee3ce0700>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/bs4_parser.py", line 80, in first_html_cleaning
+    cmd1 = "sed -e 's/<" // "p>.*<p>//g' " + fullpath + " > " + fullpath_short + "_sed.html"
+                                             │                  └ '/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/rough_html/template_designer_documentation_—_j_sed_sed'
+                                             └ '/usr/share/nginx/html/feeds/support_files/rss_text/hacker_news/rough_html/template_designer_documentation_—_j_sed_sed.html'
+
+TypeError: unsupported operand type(s) for //: 'str' and 'str'

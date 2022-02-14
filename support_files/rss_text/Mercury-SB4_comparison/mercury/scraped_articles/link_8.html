@@ -1,0 +1,82 @@
+{
+  title: 'UK COVID-19 dashboard built using Postgres and Citus for millions of users',
+  author: null,
+  date_published: '2021-12-11T17:48:22.629Z',
+  dek: null,
+  lead_image_url: 'https://techcommunity.microsoft.com/t5/image/serverpage/image-id/333259i8B366E38876B7A57',
+  content: '<body class="lia-blog lia-user-status-anonymous BlogArticlePage lia-body lia-a11y" id="lia-body"> <h2 id="toc-hId-1012921651">Entire time series data set&#x2014;currently 800M rows of data&#x2014;gets updated each &amp; every day</h2> <p>At first, the analytics dashboard only included data from a small number of sources, such as data from press conferences, tweets, or announcements made on the NHS website.</p> <p>As the project grew, like so many analytics applications, people wanted to answer even more questions with the dashboard; and so, the team began collecting more data from more sources.</p> <p>Today hospitals report the data to the NHS, and the NHS reports it to the UKHSA team. The team also established robust links to obtain data from different sources, including arrangements with:</p> <ul>\n' +
+    '<li>Offices of national statistics for the UK nations to get statistics based on death certificates</li>\n' +
+    '<li>National Health Service (NHS)</li>\n' +
+    '<li>Departments of Health and Social Care to get testing data</li>\n' +
+    '<li>National Immunisation Management System to get vaccination data</li>\n' +
+    '<li>Public health agencies to get data on cases and deaths</li>\n' +
+    '</ul> <p>Even though some of these data are already in the public domain by the time the dashboard is updated at 4pm, most people wait until 4pm before they use the data. The main reason for this is that the UK Coronavirus dashboard gives users a platform from which they can download consistent and well-structured data that has been QA<em>&#x2019;</em>ed. They also get to see visualization, with the ability to download exactly what they need, and in the format they need.</p> <p>At the time this post was published, the analytics dashboard and its underlying database&#x2014;the Azure Database for PostgreSQL managed service&#x2014;process over 55 million data points every day, aggregated in the data pipeline from approximately 800 million rows sent by different sources. &#xA0;</p> <p>The UKHSA team also updates the entire time-series data set daily. The deduplications, corrections, identifications&#x2014;all of these happen every day on the entire data set to ensure the accuracy and integrity of each publication.</p> <p>As a result, there are now over 7.5 billion records in the distributed PostgreSQL database (that&#x2019;s not rows, rather, these are records, as some are nested JSON payloads). The total number of records goes up by over 50 million each day.</p> <p>In parallel to this increase in the number of data sources and the amount of data, the UKHSA team also added new features and capabilities to the analytics dashboard in some pretty significant ways, by adding:</p> <ul>\n' +
+    '<li><a href="https://coronavirus.data.gov.uk/details/download">downloadable data sets</a> (you can download any part of the data that as published on a specific date in the past)</li>\n' +
+    '<li>new visualizations</li>\n' +
+    '<li>new search capabilities</li>\n' +
+    '<li>interactive capabilities across 6 administrative and healthcare boundaries with different levels of granularity</li>\n' +
+    '</ul> <p>For example, you can search on postcodes to quickly see data on testing, cases, vaccinations, hospital admissions, and deaths. You can even use an interactive map to visualize which areas have the greatest percentage of first and second vaccination doses.</p>\n' +
+    '<h2 id="toc-hId--794532812">&#x201C;By the numbers&#x201D; view of the UK Coronavirus analytics dashboard</h2>\n' +
+    '<p>The metrics in this table should give you a feel for the size and scale of the UK Coronavirus dashboard at the time of publication in December 2020.</p> <table width="100%">\n' +
+    '<tbody>\n' +
+    '<tr>\n' +
+    '<td width="100%" height="30px" class="lia-align-center"><strong>Amount of activity (as of Dec 10, 2021)</strong></td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px"># daily average users</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">1.5 million</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px"># concurrent users/minute, at peak</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">85K-100K</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px">median # requests hitting CDN at peak</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">250K</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px">total # daily requests (hits)</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">78 million</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px"># weekly pageviews</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">80 million</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px"># daily downloads</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">7.8 million</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="100%" height="30px" class="lia-align-center"><strong>Volume of data (as of Dec 10, 2021)</strong></td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px"># metrics published daily</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">215</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px">total # data points published per day</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">55 million for 8,000 areas</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td width="50%" height="30px"># records in PostgreSQL database</td>\n' +
+    '<td width="50%" height="30px" class="lia-align-right">7.5 billion</td>\n' +
+    '</tr>\n' +
+    '<tr>\n' +
+    '<td height="30px"># rows in PostgreSQL database</td>\n' +
+    '<td height="30px" class="lia-align-right">5.9 billion</td>\n' +
+    '</tr>\n' +
+    '</tbody>\n' +
+    '</table> <p><span class="lia-inline-image-display-wrapper lia-image-align-inline"><img src="https://techcommunity.microsoft.com/t5/image/serverpage/image-id/333336iB8F78D4007D2E5CA/image-size/large?v=v2&amp;px=999" alt="Figure 3: Metrics screenshot from the Microsoft Azure portal that depicts a sum of the total requests (on the y-axis) hitting the GOV.UK Coronavirus dashboard by time (x-axis), showing how there is a massive 10X increase in the number of requests shortly after 4:00 PM each day, when the new data is published by Pouria and the UKHSA team." class="lia-media-image"><span class="lia-inline-image-caption">Figure 3: Metrics screenshot from the Microsoft Azure portal that depicts a sum of the total requests (on the y-axis) hitting the GOV.UK Coronavirus dashboard by time (x-axis), showing how there is a massive 10X increase in the number of requests shortly after 4:00 PM each day, when the new data is published by Pouria and the UKHSA team.</span></span></p> <h2 id="toc-hId-1692980021">The performance challenges of scaling with high concurrency</h2> <p>Today, the number of users querying the analytics dashboard peaks each day at 4:00pm, when new data is released.</p> <p>There might be 30,000 concurrent hits per minute right before 4pm. Then as soon as the data are released, it goes up to 250,000 to 300,000 hits per minute. The service has been designed to immediately start caching new requests, but at the 4pm daily release time, almost all of the hits get to the server, as that is the point at which all caches are flushed to make new data available.</p> <p>The number of concurrent users at peak is 60,000 to 100,000 depending on day and prevalence&#x2014;and that&#x2019;s just the people browsing the actual website, not users who are using the <a href="https://coronavirus.data.gov.uk/details/developers-guide">three APIs</a>.</p> <p>If database responses are even the slightest bit slow, users will feel it. Providing near real-time query responses is paramount. The difference between 200 and 300 milliseconds is the difference between the website being responsive, or not.</p> <ul>\n' +
+    '<li><strong>Why is a difference of just 100 milliseconds a big deal&#x2014;especially during the peak?</strong> Additional latency can trigger a negative domino effect of performance issues, triggered by the back-pressure of asynchronous services. Even though the asynchronous services are throttled, the number of incoming requests keeps growing. Eventually, left ignored, the incoming requests will likely fail because they will time out. <p>It can get worse: attempts to try to handle the higher number of incoming requests will increase processing time&#x2014;which in turn might prompt horizontal scaling of the number of application servers. Each new server would establish more connections to the database, which increases the load on the database, which makes it harder still for the database to respond to incoming requests. Hence: a domino effect.&#xA0;</p></li>\n' +
+    '</ul> <ul>\n' +
+    '<li><strong>What is back-pressure?</strong> Synchronous services wait for the system to respond before issuing the next request, which means they are not always able to fully utilize the hardware when there are additional requests. Conversely, asynchronous services issue requests without waiting and are thus able to take advantage of parallelism in the database. However, they might issue more requests than the hardware can handle, which can cause significant slowdowns and failures: this is a phenomenon known as back-pressure. Asynchronous services therefore need a mechanism to handle back-pressure, for instance by limiting the total number of concurrent requests to the database.</li>\n' +
+    '</ul> <p>Eleven months earlier at the beginning of 2021, as the number of concurrent users querying the dashboard continued to spike, the application was starting to face some serious performance issues.</p> <p>To support this high level of concurrency led the team to decide they needed a distributed database. But which one?</p> <h2 id="toc-hId--114474442">The search for a distributed database</h2> <p>In January 2021, after experimenting with the database and running many, many tests, Pouria decided to move the application to run on <a href="https://docs.microsoft.com/azure/postgresql/hyperscale/">Hyperscale (Citus)</a> in the Azure Database for PostgreSQL managed service. Hyperscale (Citus) uses the Citus extension to Postgres&#x2014;an <a href="https://github.com/citusdata/citus">open source extension</a> that transforms Postgres into a distributed database.</p> <p>At the time of writing, the Citus distributed database cluster adopted by the team on Azure is HA-enabled for high availability and has'... 31482 more characters,
+  next_page_url: null,
+  url: 'https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/uk-covid-19-dashboard-built-using-postgres-and-citus-for/ba-p/3036276',
+  domain: 'techcommunity.microsoft.com',
+  excerpt: 'From the beginning of the COVID-19 pandemic, the United Kingdom (UK) government has made it a top priority to track key health metrics and to share those metrics with the public. And the citizens of&hellip;',
+  word_count: 1,
+  direction: 'ltr',
+  total_pages: 1,
+  rendered_pages: 1
+}

@@ -1,0 +1,71 @@
+{
+  title: 'asciibeats/elixir_ranch: A guide on how to use Ranch with Elixir',
+  content: '<div><div><article class="markdown-body entry-content container-lg">\n' +
+    '<p>Since the top search results where outdated and generally a bit unsatisfactory to me, here is my example based on <a href="https://ninenines.eu/docs/en/ranch/2.1/guide/">the official Ranch guide for Erlang</a>.</p>\n' +
+    '<h2><a id="user-content-configuration" class="anchor" href="https://github.com/asciibeats/elixir_ranch#configuration"><svg class="octicon octicon-link" width="16" height="16"><path/></svg></a>Configuration</h2>\n' +
+    '<p>Add <a href="https://ninenines.eu/docs/en/ranch/2.1/guide/">Ranch</a> to the list of dependencies in your mix.exs:</p>\n' +
+    '<div class="highlight highlight-source-elixir position-relative overflow-auto"><pre><span class="pl-k">defp</span> <span class="pl-en">deps</span> <span class="pl-k">do</span>\n' +
+    '  <span class="pl-kos">[</span>\n' +
+    '    <span class="pl-kos">{</span><span class="pl-pds">:ranch</span><span class="pl-kos">,</span> <span class="pl-s">&quot;~&gt; 2.1.0&quot;</span><span class="pl-kos">}</span>\n' +
+    '  <span class="pl-kos">]</span>\n' +
+    '<span class="pl-k">end</span></pre></div>\n' +
+    '<h2><a id="user-content-protocols" class="anchor" href="https://github.com/asciibeats/elixir_ranch#protocols"><svg class="octicon octicon-link" width="16" height="16"><path/></svg></a><a href="https://ninenines.eu/docs/en/ranch/2.1/guide/protocols/">Protocols</a></h2>\n' +
+    '<p>In accordance with the official guide, I created a simple echo server, which just responds with the message one sends to it:</p>\n' +
+    '<div class="highlight highlight-source-elixir position-relative overflow-auto"><pre><span class="pl-k">defmodule</span> <span class="pl-v">ElixirRanch.Protocols.Echo</span> <span class="pl-k">do</span>\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">behaviour</span> <span class="pl-pds">:ranch_protocol</span>\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">timeout</span> <span class="pl-c1">5000</span>\n' +
+    '\n' +
+    '  <span class="pl-k">def</span> <span class="pl-en">start_link</span><span class="pl-kos">(</span><span class="pl-s1">ref</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">,</span> <span class="pl-s1">opts</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '    <span class="pl-kos">{</span><span class="pl-pds">:ok</span><span class="pl-kos">,</span> <span class="pl-en">spawn_link</span><span class="pl-kos">(</span><span class="pl-c1">__MODULE__</span><span class="pl-kos">,</span> <span class="pl-pds">:init</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-s1">ref</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">,</span> <span class="pl-s1">opts</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">}</span>\n' +
+    '  <span class="pl-k">end</span>\n' +
+    '\n' +
+    '  <span class="pl-k">def</span> <span class="pl-en">init</span><span class="pl-kos">(</span><span class="pl-s1">ref</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">,</span> <span class="pl-c">_opts</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '    <span class="pl-kos">{</span><span class="pl-pds">:ok</span><span class="pl-kos">,</span> <span class="pl-s1">socket</span><span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-v">:ranch</span><span class="pl-c1">.</span><span class="pl-en">handshake</span><span class="pl-kos">(</span><span class="pl-s1">ref</span><span class="pl-kos">)</span>\n' +
+    '    <span class="pl-en">loop</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">)</span>\n' +
+    '  <span class="pl-k">end</span>\n' +
+    '\n' +
+    '  <span class="pl-k">defp</span> <span class="pl-en">loop</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '    <span class="pl-k">case</span> <span class="pl-s1">transport</span><span class="pl-c1">.</span><span class="pl-en">recv</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-c1">0</span><span class="pl-kos">,</span> <span class="pl-c1">@</span><span class="pl-c1">timeout</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '      <span class="pl-kos">{</span><span class="pl-pds">:ok</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">}</span> <span class="pl-c1">-&gt;</span>\n' +
+    '        <span class="pl-pds">:ok</span> <span class="pl-c1">=</span> <span class="pl-s1">transport</span><span class="pl-c1">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">)</span>\n' +
+    '        <span class="pl-en">loop</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">)</span>\n' +
+    '      <span class="pl-c">_</span> <span class="pl-c1">-&gt;</span>\n' +
+    '        <span class="pl-s1">transport</span><span class="pl-c1">.</span><span class="pl-en">close</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">)</span>\n' +
+    '    <span class="pl-k">end</span>\n' +
+    '  <span class="pl-k">end</span>\n' +
+    '<span class="pl-k">end</span></pre></div>\n' +
+    '<p>Or, if you like to use <a href="https://hexdocs.pm/elixir/GenServer.html">GenServer</a>:</p>\n' +
+    '<div class="highlight highlight-source-elixir position-relative overflow-auto"><pre><span class="pl-k">defmodule</span> <span class="pl-v">ElixirRanch.Protocols.EchoServer</span> <span class="pl-k">do</span>\n' +
+    '  <span class="pl-k">use</span> <span class="pl-v">GenServer</span>\n' +
+    '\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">behaviour</span> <span class="pl-pds">:ranch_protocol</span>\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">timeout</span> <span class="pl-c1">5000</span>\n' +
+    '\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">impl</span> <span class="pl-c1">true</span>\n' +
+    '  <span class="pl-k">def</span> <span class="pl-en">start_link</span><span class="pl-kos">(</span><span class="pl-s1">ref</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">,</span> <span class="pl-s1">opts</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '    <span class="pl-kos">{</span><span class="pl-pds">:ok</span><span class="pl-kos">,</span> <span class="pl-v">:proc_lib</span><span class="pl-c1">.</span><span class="pl-en">spawn_link</span><span class="pl-kos">(</span><span class="pl-c1">__MODULE__</span><span class="pl-kos">,</span> <span class="pl-pds">:init</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-kos">{</span><span class="pl-s1">ref</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">,</span> <span class="pl-s1">opts</span><span class="pl-kos">}</span><span class="pl-kos">]</span><span class="pl-kos">)</span><span class="pl-kos">}</span>\n' +
+    '  <span class="pl-k">end</span>\n' +
+    '\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">impl</span> <span class="pl-c1">true</span>\n' +
+    '  <span class="pl-k">def</span> <span class="pl-en">init</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-s1">ref</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">,</span> <span class="pl-c">_opts</span><span class="pl-kos">}</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '    <span class="pl-kos">{</span><span class="pl-pds">:ok</span><span class="pl-kos">,</span> <span class="pl-s1">socket</span><span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-v">:ranch</span><span class="pl-c1">.</span><span class="pl-en">handshake</span><span class="pl-kos">(</span><span class="pl-s1">ref</span><span class="pl-kos">)</span>\n' +
+    '    <span class="pl-pds">:ok</span> <span class="pl-c1">=</span> <span class="pl-s1">transport</span><span class="pl-c1">.</span><span class="pl-en">setopts</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-pds">active: </span><span class="pl-pds">:once</span><span class="pl-kos">]</span><span class="pl-kos">)</span>\n' +
+    '    <span class="pl-v">:gen_server</span><span class="pl-c1">.</span><span class="pl-en">enter_loop</span><span class="pl-kos">(</span><span class="pl-c1">__MODULE__</span><span class="pl-kos">,</span> <span class="pl-kos">[</span><span class="pl-kos">]</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-c1">@</span><span class="pl-c1">timeout</span><span class="pl-kos">)</span>\n' +
+    '  <span class="pl-k">end</span>\n' +
+    '\n' +
+    '  <span class="pl-c1">@</span><span class="pl-c1">impl</span> <span class="pl-c1">true</span>\n' +
+    '  <span class="pl-k">def</span> <span class="pl-en">handle_info</span><span class="pl-kos">(</span><span class="pl-kos">{</span><span class="pl-pds">:tcp</span><span class="pl-kos">,</span> <span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-kos">}</span><span class="pl-kos">,</span> <span class="pl-kos">{</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">transport</span><span class="pl-kos">}</span> <span class="pl-c1">=</span> <span class="pl-s1">state</span><span class="pl-kos">)</span> <span class="pl-k">do</span>\n' +
+    '    <span class="pl-pds">:ok</span> <span class="pl-c1">=</span> <span class="pl-s1">transport</span><span class="pl-c1">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s1">socket</span><span class="pl-kos">,</span> <span class="pl-s1">data</span><span class="pl-'... 9424 more characters,
+  author: 'asciibeats',
+  date_published: null,
+  lead_image_url: 'https://opengraph.githubassets.com/79a665269232fd5f01c42746a6747ae1fc630ba5cef72bbed44df4b2ae74727f/asciibeats/elixir_ranch',
+  dek: null,
+  next_page_url: null,
+  url: 'https://github.com/asciibeats/elixir_ranch',
+  domain: 'github.com',
+  excerpt: 'A guide on how to use Ranch with Elixir. Contribute to asciibeats/elixir_ranch development by creating an account on GitHub.',
+  word_count: 418,
+  direction: 'ltr',
+  total_pages: 1,
+  rendered_pages: 1
+}

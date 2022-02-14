@@ -1,0 +1,350 @@
+2022-01-24T11:06:37.951527+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (169868), thread 'MainThread' (140567248570176):
+Traceback (most recent call last):
+
+  File "/usr/lib/python3.10/shutil.py", line 805, in move
+    os.rename(src, real_dst)
+    │  │      │    └ '/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/link_1.mjs'
+    │  │      └ 'link_1.mjs'
+    │  └ <built-in function rename>
+    └ <module 'os' from '/usr/lib/python3.10/os.py'>
+
+FileNotFoundError: [Errno 2] No such file or directory: 'link_1.mjs' -> '/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/link_1.mjs'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/scrape_file_creation.py", line 41, in <module>
+    scrape_file_creation()
+    └ <function scrape_file_creation at 0x7fd85bc9d240>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/scrape_file_creation.py", line 37, in scrape_file_creation
+    shutil.move(title, f"/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/{title}")
+    │      │    └ 'link_1.mjs'
+    │      └ <function move at 0x7fd85c9253f0>
+    └ <module 'shutil' from '/usr/lib/python3.10/shutil.py'>
+
+  File "/usr/lib/python3.10/shutil.py", line 825, in move
+    copy_function(src, real_dst)
+    │             │    └ '/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/link_1.mjs'
+    │             └ 'link_1.mjs'
+    └ <function copy2 at 0x7fd85c924e50>
+  File "/usr/lib/python3.10/shutil.py", line 434, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+    │        │    │                    └ True
+    │        │    └ '/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/link_1.mjs'
+    │        └ 'link_1.mjs'
+    └ <function copyfile at 0x7fd85c924b80>
+  File "/usr/lib/python3.10/shutil.py", line 256, in copyfile
+    with open(dst, 'wb') as fdst:
+              └ '/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/link_1.mjs'
+
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/mercury/js/link_1.mjs'
+2022-01-24T12:22:57.948369+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (178130), thread 'MainThread' (139623825569600):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 31, in <module>
+    insert_urls_on_class()
+    └ <function insert_urls_on_class at 0x7efcb3662680>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function insert_urls_on_class at 0x7efcb44e3d90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 27, in insert_urls_on_class
+    print(line[82])
+          └ '"""This module will house all needed transformations needed by the content,\n'
+
+IndexError: string index out of range
+2022-01-24T12:35:35.864285+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (178494), thread 'MainThread' (140320815814464):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 35, in <module>
+    insert_urls_on_class()
+    └ <function insert_urls_on_class at 0x7f9efb40e680>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function insert_urls_on_class at 0x7f9efc297d90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 31, in insert_urls_on_class
+    print(line[82])
+          └ '"""This module will house all needed transformations needed by the content,\n'
+
+IndexError: string index out of range
+2022-01-24T12:39:24.361426+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (178568), thread 'MainThread' (139773462062912):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 35, in <module>
+    insert_urls_on_class()
+    └ <function insert_urls_on_class at 0x7f1f8a6ea680>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function insert_urls_on_class at 0x7f1f8b55fd90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 31, in insert_urls_on_class
+    print(line[82])
+          └ '"""This module will house all needed transformations needed by the content,\n'
+
+IndexError: string index out of range
+2022-01-24T12:44:35.083538+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (178703), thread 'MainThread' (139943083738944):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 34, in <module>
+    insert_urls_on_class()
+    └ <function insert_urls_on_class at 0x7f4708ab6680>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function insert_urls_on_class at 0x7f4709937d90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 30, in insert_urls_on_class
+    print(line[82])
+          └ 'pas.first_html_cleaning()\n'
+
+IndexError: string index out of range
+2022-01-24T12:47:47.090236+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (178778), thread 'MainThread' (139977618388800):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 34, in <module>
+    insert_urls_on_class()
+    └ <function insert_urls_on_class at 0x7f4f13182680>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function insert_urls_on_class at 0x7f4f14003d90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 30, in insert_urls_on_class
+    print(line[81])
+          └ '"""This module will house all needed transformations needed by the content,\n'
+
+IndexError: string index out of range
+2022-01-24T12:49:13.138649+0000 - __main__ - ERROR - An error has been caught in function '<module>', process 'MainProcess' (178846), thread 'MainThread' (140701843208000):
+Traceback (most recent call last):
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 34, in <module>
+    insert_urls_on_class()
+    └ <function insert_urls_on_class at 0x7ff7b241e680>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function insert_urls_on_class at 0x7ff7b329fd90>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/insert_urls_on_class.py", line 30, in insert_urls_on_class
+    print(line[81])
+          └ '"""This module will house all needed transformations needed by the content,\n'
+
+IndexError: string index out of range
+2022-01-24T13:33:00.259823+0000 - __main__ - ERROR - An error has been caught in function 'main', process 'MainProcess' (180000), thread 'MainThread' (140655968765760):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 32, in <module>
+    main()
+    └ <function main at 0x7fed02b9cee0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function main at 0x7fed04b05cf0>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 27, in main
+    pas.bs4_parser()
+    │   └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c310>
+    └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c1f0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 38, in bs4_parser
+    rough_title = soup.title.get_text("-", strip=True)
+                  └ Not Found
+
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2022-01-24T13:33:00.259823+0000 - __main__ - ERROR - An error has been caught in function 'main', process 'MainProcess' (180000), thread 'MainThread' (140655968765760):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 32, in <module>
+    main()
+    └ <function main at 0x7fed02b9cee0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function main at 0x7fed04b05cf0>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 27, in main
+    pas.bs4_parser()
+    │   └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c310>
+    └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c1f0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 38, in bs4_parser
+    rough_title = soup.title.get_text("-", strip=True)
+                  └ Not Found
+
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2022-01-24T13:33:00.423896+0000 - bs4_parser - ERROR - An error has been caught in function 'rough_html', process 'MainProcess' (180000), thread 'MainThread' (140655968765760):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 32, in <module>
+    main()
+    └ <function main at 0x7fed02b9cee0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function main at 0x7fed04b05cf0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 28, in main
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7fed02b9c700>
+    └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.rough_html at 0x7fed02b9c5e0>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 57, in rough_html
+    page_fundamentals = self.bs4_parser()
+                        │    └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c310>
+                        └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c1f0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 38, in bs4_parser
+    rough_title = soup.title.get_text("-", strip=True)
+                  └ Not Found
+
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2022-01-24T13:33:00.423896+0000 - bs4_parser - ERROR - An error has been caught in function 'rough_html', process 'MainProcess' (180000), thread 'MainThread' (140655968765760):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 32, in <module>
+    main()
+    └ <function main at 0x7fed02b9cee0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function main at 0x7fed04b05cf0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 28, in main
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7fed02b9c700>
+    └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.rough_html at 0x7fed02b9c5e0>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 57, in rough_html
+    page_fundamentals = self.bs4_parser()
+                        │    └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c310>
+                        └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.bs4_parser at 0x7fed02b9c1f0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 38, in bs4_parser
+    rough_title = soup.title.get_text("-", strip=True)
+                  └ Not Found
+
+AttributeError: 'NoneType' object has no attribute 'get_text'
+2022-01-24T13:33:00.458144+0000 - __main__ - ERROR - An error has been caught in function 'main', process 'MainProcess' (180000), thread 'MainThread' (140655968765760):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 32, in <module>
+    main()
+    └ <function main at 0x7fed02b9cee0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function main at 0x7fed04b05cf0>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 28, in main
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7fed02b9c700>
+    └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.rough_html at 0x7fed02b9c5e0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 59, in rough_html
+    fundamentals = list(page_fundamentals.items())
+                        └ None
+
+AttributeError: 'NoneType' object has no attribute 'items'
+2022-01-24T13:33:00.458144+0000 - __main__ - ERROR - An error has been caught in function 'main', process 'MainProcess' (180000), thread 'MainThread' (140655968765760):
+Traceback (most recent call last):
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 32, in <module>
+    main()
+    └ <function main at 0x7fed02b9cee0>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ ()
+           └ <function main at 0x7fed04b05cf0>
+
+> File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/main.py", line 28, in main
+    pas.rough_html()
+    │   └ <function ParseAndScrape.rough_html at 0x7fed02b9c700>
+    └ <bs4_parser.ParseAndScrape object at 0x7fed02786200>
+
+  File "/home/mic/.local/lib/python3.10/site-packages/snoop/tracer.py", line 170, in simple_wrapper
+    return function(*args, **kwargs)
+           │         │       └ {}
+           │         └ (<bs4_parser.ParseAndScrape object at 0x7fed02786200>,)
+           └ <function ParseAndScrape.rough_html at 0x7fed02b9c5e0>
+
+  File "/usr/share/nginx/html/feeds/support_files/rss_text/Mercury-SB4_comparison/sb4/bs4_parser.py", line 59, in rough_html
+    fundamentals = list(page_fundamentals.items())
+                        └ None
+
+AttributeError: 'NoneType' object has no attribute 'items'
+2022-01-24T22:57:33.642643+0000 - __main__ - INFO - output..html
+2022-01-24T22:57:33.643163+0000 - __main__ - INFO - pandoc --highlight-style=zenburn -s output.txt -ooutput..html
